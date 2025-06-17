@@ -2,7 +2,11 @@
         
         
         
-        
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         /* General Styles */
         #mouse-circle {
             width: 15px;
@@ -17,7 +21,7 @@
             pointer-events: none; /* Allows clicks/interactions on elements beneath the circle */
             transition: transform 0.05s linear; /* Smooths the movement slightly */
             z-index: 9999; /* Ensure it's on top of other content */
-            box-shadow: 0 0 10px 5px rgba(137, 227, 255, 0.6); / Add the glow effect */ight: 1
+            box-shadow: 0 0 10px 5px rgba(137, 227, 255, 0.6); /* Add the glow effect */
         }
 
         
@@ -408,7 +412,61 @@
             line-height: 1.6;
         }
 
-        .video-container-one{
+        .video-container-one {
+            max-width: 55vh;
+            max-height: 30vh;
+            
+            padding: 0%;
+            margin-left: 1vh;
+        }
+
+        .video-container-one:hover{
+            transform: scale(1.02);
+        }
+
+        .video-container-one video{
+            max-width: 55vh;
+            max-height: 30vh;
+
+            padding: 0%;
+            margin: 1vh;
+        }
+
+        .video-container-two {
+            max-width: 55vh;
+            max-height: 30vh;
+            
+            padding: 0%;
+            margin: 1vh;
+        }   
+
+        .video-container-three {
+            max-width: 55vh;
+            max-height: 30vh;
+           
+            padding: 0%;
+            margin: 1vh;
+        }
+
+        .vid-one {
+            width: 45vh;        
+            height: 30vh;
+            border-radius: 4vh;
+            
+        }
+
+        .vid-two {
+            width: 45vh;
+            height: 30vh;
+            border-radius: 4vh;
+            
+        }
+
+        .vid-three {
+            width: 45vh;
+            height: 30vh;
+            border-radius: 4vh;
+            
             
         }
         
