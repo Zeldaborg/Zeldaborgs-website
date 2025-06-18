@@ -23,59 +23,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+const videoContainerOne = document.querySelector(".video-container-one");
+const videoOne = document.querySelector(".video-one");
 
-const videoOne = document.querySelector(".video-container-one videoOne");
-const hoverOne = document.querySelector(".video-container-one .hover-text");
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    videoContainerOne.addEventListener('touchstart', function () {
+        if (videoOne.paused) {
+            videoOne.play();
+        } else {
+            videoOne.pause();
+        }
+    });
+} else {
+    videoContainerOne.addEventListener('mouseenter', function () {
+        videoOne.play();
+    });
 
-videoOne.addEventListener("mouseenter", () => {
-  videoOne.play();
-  hoverOne.classList.remove("active");
-});
+    videoContainerOne.addEventListener('mouseleave', function () {
+        videoOne.pause();
+        videoOne.currentTime = 0;
+    });
+}
 
-videoOne.addEventListener("mouseleave", () => {
-  videoOne.pause();
-  hoverOne.classList.add("active");
-});
+const videoContainerTwo = document.querySelector(".video-container-two");
+const videoTwo = document.querySelector(".video-two");
 
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    videoContainerTwo.addEventListener('touchstart', function () {
+        if (videoTwo.paused) {
+            videoTwo.play();
+        } else {
+            videoTwo.pause();
+        }
+    });
+} 
+else {
+    videoContainerTwo.addEventListener('mouseenter', function () {
+        videoTwo.play();
+    });
 
-const videoTwo = document.querySelector(".video-container-two videoTwo");
-const hoverTwo = document.querySelector(".video-container-two .hover-text");
+    videoContainerTwo.addEventListener('mouseleave', function () {
+        videoTwo.pause();
+        videoTwo.currentTime = 0;
+    });
+}
 
-videoTwo.addEventListener("mouseenter", () => {
-  videoTwo.play();
-  hoverTwo.classList.remove("active");
-});
+// smooth scrolling for navigation links
+         function smoothScroll(navlinks) {
+       const element = document.getElementById(nav-links);
+       if (element) {
+         window.scrollTo({
+           top: element.offsetTop,
+           behavior: 'smooth'
+         });
+       }
+     }
 
-videotwo.addEventListener("mouseleave", () => {
-  videoTwo.pause();
-  hoverTwo.classList.add("active");
-});
-
-
-const videoThree = document.querySelector(".video-container-three videoThree");
-const hoverThree = document.querySelector(".video-container-three .hover-text");
-
-videoThree.addEventListener("mouseenter", () => {
-  videoThree.play();
-  hoverThree.classList.remove("active");
-});
-
-videoThree.addEventListener("mouseleave", () => {
-  videoThree.pause();
-  hoverThree.classList.add("active");
-});
-
-
-
-// Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
 
 
 
